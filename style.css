@@ -1,55 +1,78 @@
-*{
-	margin:0;
-	padding:0;
-	line-height:0;
-	overflow:hidden;
+* {
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	/* overflow:hidden; */
 }
-body{
-	background:grey;
+
+body {
+	background: grey;
+	height: 100vh;
 }
-.squareWidth{
-	width:20px;
-	height:20px;
-	background:#000;
-	display:inline-block;
-	transition:.15s;
+
+.squareWidth {
+	width: 20px;
+	height: 20px;
+	margin: auto;
+	/* border: 1px solid rgb(214, 95, 95); */
+	background: #000;
+	display: inline-block;
+	transition: .15s;
 }
-#toolbar{
-	padding:5px;
+
+#toolbar {
+	padding: 4px;
 }
-#toolbar #tools,#color{
-	display:inline-block;
+
+#toolbar #tools,
+#color {
+	display: inline-block;
 }
+
 .tool {
-	display:inline-block;
+	display: inline-block;
 }
-.tool img{
-	width:24px;
-	height:24px;
+
+.tool img {
+	width: 24px;
+	height: 24px;
 }
-#colorpick{
-	height:20px;
-	width:166px;
+
+#colorpick {
+	height: 20px;
+	width: 166px;
 }
-#enter{
-	margin-right:5px;
-	height:24px;
-	width:50px;
-	cursor:pointer;
+
+#enter {
+	margin-right: 5px;
+	height: 24px;
+	width: 50px;
+	cursor: pointer;
 }
-#tools{
-	background:#e3e3e3;
-	padding:10px;
-	border:1px solid #000;
+
+#tools {
+	background: #e3e3e3;
+	padding: 10px;
+	border: 1px solid #000;
 }
-#toolbar #tools .pen img{
-	width:24px;
-	height:24px;
+
+#toolbar #tools .pen img {
+	width: 24px;
+	height: 24px;
 }
-hr{
+
+hr {
 	background: grey;
 	border: 0;
 	height: 1px;
-	box-sizing:content-box;
+	box-sizing: content-box;
 	display: block;
+}
+
+.playground {
+	width: 50%;
+	height: 50%;
+	/* height: calc(100vh - 54px); */
+	margin: auto;
+	overflow-y: hidden;
 }
