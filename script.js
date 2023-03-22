@@ -1,3 +1,4 @@
+console.log('git gud')
 var e
 var height = document.documentElement.clientHeight
 var width = document.documentElement.clientWidth
