@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	</link>
 	<script src="script.js"></script>
 </head>
+
 <body onload="generate()">
-<div id="toolbar">
-	<div id="color">
-		<input id="colorpick">
-		</input>
-		<input id="enter" type="submit" value="Enter" onclick="kola()">
-		</input>
+	<div id="toolbar">
+		<div id="color">
+			<input id="colorpick">
+			</input>
+			<input id="enter" type="submit" value="Enter" onclick="kola()">
+			</input>
+		</div>
+		<div id="tools">
+			<div class="tool pen" onclick="tool_pen()">
+				<img src="img/pen.png">
+			</div>
+			<div class="tool fill" onclick="tool_fill()">
+				<img src="img/fill.png">
+			</div>
+			<div class="tool dropper" onclick="tool_dropper()">
+				<img src="img/dropper.png">
+			</div>
+			<div class="tool eraser" onclick="tool_eraser()">
+				<img src="img/eraser.png">
+			</div>
+		</div>
 	</div>
-	<div id="tools">
-		<div class="tool pen" onclick="tool_pen()">
-			<img src="img/pen.png">
-		</div>
-		<div class="tool fill" onclick="tool_fill()">
-			<img src="img/fill.png">
-		</div>
-		<div class="tool dropper" onclick="tool_dropper()">
-			<img src="img/dropper.png">
-		</div>
-				<div class="tool eraser" onclick="tool_eraser()">
-			<img src="img/eraser.png">
-		</div>
+	<div class="playground">
+
 	</div>
-</div>
-<div class="playground">
-	
-</div>
 </body>
+
 </html>

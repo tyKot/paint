@@ -1,23 +1,11 @@
-console.log('git gud')
+console.log('git gud ;)')
 var color
-cubeSize = 20//px
-X = 0
-height = document.documentElement.clientHeight
-width = document.documentElement.clientWidth 
-let limit = 2
-function name() {
-	console.log("x " + height)
-	console.log("y " + width)
-	// for (let i = 1; i < height + width; i++) {
-	// 	var x3 = document.createElement('div')
-	// 	x3.setAttribute('class', `squareWidth ${i}`)
-	// 	x3.setAttribute('onmouseover', 'over(this)')
-	// 	document.querySelector('.playground').appendChild(x3)
-	// 	//x3.setAttribute('onmouseout','out(this)')
-	// 	//console.log('x'+i)
-	// }
-	generate()
-}
+	cubeSize = 20//px
+	X = 0
+	height = document.documentElement.clientHeight
+	width = document.documentElement.clientWidth 
+let limit = 6
+
 function tool_pen() {
 
 }
@@ -54,38 +42,39 @@ function kola() {
 }
 
 function generate() {
+	console.log("height " + height)
+	console.log("width " + width)
 	var playg = document.querySelector('.playground')
 		floor = Math.floor(playg.clientWidth / cubeSize) * cubeSize
 	// ceil = Math.ceil(playg.clientWidth / 10) * 10
-	for (let y = 1; y <= limit; y++) {
-		console.log('y:' + y)
+	for (let y = 0; y <= playg.clientHeight-cubeSize; y+=cubeSize) {
+		console.log('Y:' + y)
 		var x3 = document.createElement('div')
 		x3.setAttribute('class', 'squareWidth')
 		x3.setAttribute('onmouseover', 'over(this)')
 		playg.appendChild(x3)
-		generate_osX(playg)
-	}
+		console.log('height:'+playg.clientHeight)
 
-}
+		for (let x = 1; x < playg.clientWidth; x++) {
 
-function generate_osX(playg){
-	for (let x = 1; x < playg.clientWidth; x++) {
-
-		console.log(`floor` + floor)
-		console.log(`orig` + playg.clientWidth)
-		if (X == floor) {
-			console.log('nice')
-			break
+			// console.log(`floor` + floor)
+			// console.log(`orig` + playg.clientWidth)
+			X += cubeSize
+			if (X == floor) {
+				console.log('nice')
+				X=0
+				break
+			}
+			var x3 = document.createElement('div')
+			x3.setAttribute('class', 'squareWidth')
+			x3.setAttribute('onmouseover', 'over(this)')
+			x3.style.background='#fff'
+			playg.appendChild(x3)
+			// console.log('x:' + x)
+			
 		}
-		X += cubeSize
-		var x3 = document.createElement('div')
-		x3.setAttribute('class', 'squareWidth')
-		x3.setAttribute('onmouseover', 'over(this)')
-		playg.appendChild(x3)
-		console.log('x:' + x)
-		
 	}
-	
+
 }
 
 
