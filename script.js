@@ -68,7 +68,7 @@ function generate() {
 			var x3 = document.createElement('div')
 			x3.setAttribute('class', 'squareWidth')
 			x3.setAttribute('onmouseover', 'over(this)')
-			x3.style.background='#fff'
+			// x3.style.background='#fff'
 			playg.appendChild(x3)
 			// console.log('x:' + x)
 			
