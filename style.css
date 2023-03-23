@@ -70,9 +70,9 @@ hr {
 }
 
 .playground {
-	/* width: 60%; */
-	/* height: 50%; */
-	height: calc(100vh - 54px);
+	width: 1280px;
+	height: 720px;
+	/* height: calc(100vh - 54px); */
 	margin: auto;
 	overflow-y: hidden;
 	/* border: 2px solid red; */
