@@ -14,6 +14,7 @@ function tool_pen() {
 }
 function tool_fill(color) {
 	mode = 'fill'
+	
 	var pixel = document.querySelectorAll('.squareWidth')
 	pixel.forEach(el => {
 		el.style.background = color
@@ -43,6 +44,12 @@ function paint(pixel) {
 		pixel.style.background = color//getRandomColor()
 		return
 	}
+	if(window.matchMedia("(pointer: coarse)").matches) {
+		// touchscreen
+		document.body.append('touch?')
+		console.log('touch?')
+	}
+
 	userColor.style.background = color
 	mode = 'default'
 	// console.log(mode)
