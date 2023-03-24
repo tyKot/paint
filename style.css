@@ -10,6 +10,12 @@
 	padding: 0;
 	line-height: 0;
 	/* overflow:hidden; */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 body {
@@ -51,92 +57,92 @@ img {
 	height: inherit;
 }
 
-.pallete > *:nth-child(1) {
+.pallete>*:nth-child(1) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 1;
 }
 
-.pallete > *:nth-child(2) {
+.pallete>*:nth-child(2) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 3;
 }
 
-.pallete > *:nth-child(3) {
+.pallete>*:nth-child(3) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 5;
 }
 
-.pallete > *:nth-child(4) {
+.pallete>*:nth-child(4) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 7;
 }
 
-.pallete > *:nth-child(5) {
+.pallete>*:nth-child(5) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 9;
 }
 
-.pallete > *:nth-child(6) {
+.pallete>*:nth-child(6) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 11;
 }
 
-.pallete > *:nth-child(7) {
+.pallete>*:nth-child(7) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 13;
 }
 
-.pallete > *:nth-child(8) {
+.pallete>*:nth-child(8) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 15;
 }
 
-.pallete > *:nth-child(9) {
+.pallete>*:nth-child(9) {
 	-ms-grid-row: 1;
 	-ms-grid-column: 17;
 }
 
-.pallete > *:nth-child(10) {
+.pallete>*:nth-child(10) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 1;
 }
 
-.pallete > *:nth-child(11) {
+.pallete>*:nth-child(11) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 3;
 }
 
-.pallete > *:nth-child(12) {
+.pallete>*:nth-child(12) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 5;
 }
 
-.pallete > *:nth-child(13) {
+.pallete>*:nth-child(13) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 7;
 }
 
-.pallete > *:nth-child(14) {
+.pallete>*:nth-child(14) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 9;
 }
 
-.pallete > *:nth-child(15) {
+.pallete>*:nth-child(15) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 11;
 }
 
-.pallete > *:nth-child(16) {
+.pallete>*:nth-child(16) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 13;
 }
 
-.pallete > *:nth-child(17) {
+.pallete>*:nth-child(17) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 15;
 }
 
-.pallete > *:nth-child(18) {
+.pallete>*:nth-child(18) {
 	-ms-grid-row: 3;
 	-ms-grid-column: 17;
 }
@@ -169,7 +175,7 @@ img {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	gap: 5px;
 	padding: 4px;
 }
@@ -195,10 +201,10 @@ img {
 	border-radius: 2px;
 }
 
-.clicked{
+.clicked {
 	border: 2px solid;
-    border-radius: 4px;
-    background: #ededed;
+	border-radius: 4px;
+	background: #ededed;
 }
 
 

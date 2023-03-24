@@ -44,6 +44,7 @@ function paint(pixel) {
 		pixel.style.background = color//getRandomColor()
 		return
 	}
+	console.log(window.matchMedia("(pointer: coarse)").matches)
 	if(window.matchMedia("(pointer: coarse)").matches) {
 		// touchscreen
 		document.body.append('touch?')
