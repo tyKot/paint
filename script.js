@@ -58,7 +58,7 @@ function generate() {
 		var x3 = document.createElement('div')
 		x3.setAttribute('class', 'squareWidth')
 		x3.setAttribute('onmouseover', 'paint(this)')
-		// x3.setAttribute('ontouchstart', 'paint(this)')
+		x3.setAttribute('ontouchstart', 'paint(this)')
 		x3.setAttribute('ontouchmove', 'paint(this)')
 		playg.appendChild(x3)
 		console.log('height:'+playg.clientHeight)
