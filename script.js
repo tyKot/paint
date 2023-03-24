@@ -8,7 +8,7 @@ var color = '#fff',
 let limit = 6
 
 function tool_pen() {
-	mode = 'click'
+	mode = 'default'
 }
 function tool_fill(color) {
 	mode = 'fill'
@@ -16,33 +16,40 @@ function tool_fill(color) {
 	pixel.forEach(el => {
 		el.style.background = color
 	});
+	mode = 'default'
 }
 function tool_dropper() {
 	mode = 'drop_color'
 
+	console.log(`drop_color mode:${mode}`)
 }
 function tool_eraser() {
 	mode = 'erase'
+
+	console.log(`erase mode:${mode}`)
+}
+function tool_erase_all() {
+	mode = 'erase_all'
+	var pixel = document.querySelectorAll('.squareWidth')
+	pixel.forEach(el => {
+		el.style.background = '#fff'
+	});
+	console.log(`erase all mode:${mode}`)
 }
 function paint(pixel) {
-	if (!mode === 'drop_color') {
+	if (!(mode == 'drop_color')) {
 		pixel.style.background = color//getRandomColor()
 		return
 	}
+	userColor.style.background = color
+	mode = 'default'
+	// console.log(mode)
 	userColor.value = pixel.style.background
 }
 
-function getRandomColor() {
-	var letters = '0123456789ABCDEF';
-	var color = '#';
-	for (var i = 0; i < 6; i++) {
-		color += letters[Math.floor(Math.random() * 16)];
-	}
-	return color;
-}
-
 function pickColor(btn) {
-	color = btn.style
+	color = btn.style.background
+	userColor.style.background = color
 	console.log(color)
 }
 
@@ -79,11 +86,19 @@ function createPixel(playg) {
 	var x3 = document.createElement('div')
 	x3.setAttribute('class', 'squareWidth')
 	x3.setAttribute('onclick', 'paint(this)')
-	// x3.setAttribute('onmouseover', 'paint(this)')
+	x3.setAttribute('onmouseover', 'paint(this)')
 	x3.setAttribute('ontouchstart', 'paint(this)')
 	x3.setAttribute('ontouchmove', 'paint(this)')
 	x3.style.background = '#fff'
 	playg.appendChild(x3)
+}
+function getRandomColor() {
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
 }
 
 

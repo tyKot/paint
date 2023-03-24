@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="script.js"></script>
 </head>
@@ -14,23 +14,23 @@
 		<div class="color" id="color">
 			<button class="userColor" id="userColor"></button>
 			<div class="pallete">
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #000000;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #7f7f7f;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #880015;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ed1c24;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ff7f27;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #fff200;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #22b14c;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #00a2e8;"></button>
 
-				<button class="colorBox" id="palleteColor"></button>
-				<button class="colorBox" id="palleteColor"></button>
-				<button class="colorBox" id="palleteColor"></button>
-				<button class="colorBox" id="palleteColor"></button>
-				<button class="colorBox" id="palleteColor"></button>
-				<button class="colorBox" id="palleteColor"></button>
-				<button class="colorBox" id="palleteColor"></button>
-				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ffffff;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #c3c3c3;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #b97a57;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ffaec9;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ffc90e;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #efe4b0;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #b5e61d;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #99d9ea;"></button>
 			</div>
 			<!-- <input id="colorpick">
 			</input>
@@ -39,16 +39,19 @@
 		</div>
 		<div class="tools" id="tools">
 			<div class="tool pen" onclick="tool_pen()">
-				<img src="img/pen.png">
+				<img src="img/pen.svg">
 			</div>
-			<div class="tool fill" onclick="tool_fill(colorpick.value)">
-				<img src="img/fill.png">
+			<div class="tool fill" onclick="tool_fill(userColor.style.background)">
+				<img src="img/fill.svg">
 			</div>
 			<div class="tool dropper" onclick="tool_dropper()">
-				<img src="img/dropper.png">
+				<img src="img/dropper.svg">
 			</div>
 			<div class="tool eraser" onclick="tool_eraser()">
-				<img src="img/eraser.png">
+				<img src="img/eraser.svg">
+			</div>
+			<div class="tool erase_all" onclick="tool_eraser()">
+				<img src="img/erase_all.svg">
 			</div>
 		</div>
 	</div>
