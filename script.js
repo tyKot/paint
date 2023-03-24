@@ -55,12 +55,7 @@ function generate() {
 	// ceil = Math.ceil(playg.clientWidth / 10) * 10
 	for (let y = 0; y <= playg.clientHeight-cubeSize; y+=cubeSize) {
 		console.log('Y:' + y)
-		var x3 = document.createElement('div')
-		x3.setAttribute('class', 'squareWidth')
-		x3.setAttribute('onmouseover', 'paint(this)')
-		x3.setAttribute('ontouchstart', 'paint(this)')
-		x3.setAttribute('ontouchmove', 'paint(this)')
-		playg.appendChild(x3)
+		createPixel(playg)
 		console.log('height:'+playg.clientHeight)
 
 		for (let x = 1; x < playg.clientWidth; x++) {
@@ -73,11 +68,7 @@ function generate() {
 				X=0
 				break
 			}
-			var x3 = document.createElement('div')
-			x3.setAttribute('class', 'squareWidth')
-			x3.setAttribute('onmouseover', 'paint(this)')
-			// x3.style.background='#fff'
-			playg.appendChild(x3)
+			createPixel(playg)
 			// console.log('x:' + x)
 			
 		}
@@ -85,7 +76,14 @@ function generate() {
 
 }
 
-
+function createPixel(playg){
+	var x3 = document.createElement('div')
+	x3.setAttribute('class', 'squareWidth')
+	x3.setAttribute('onmouseover', 'paint(this)')
+	x3.setAttribute('ontouchstart', 'paint(this)')
+	x3.setAttribute('ontouchmove', 'paint(this)')
+	playg.appendChild(x3)
+}
 
 
 
