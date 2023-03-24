@@ -7,6 +7,8 @@ var color = '#fff',
 	mode = 'default'
 let limit = 6
 
+
+
 function tool_pen() {
 	mode = 'default'
 }
@@ -55,7 +57,7 @@ function pickColor(btn) {
 
 function generate() {
 	console.log("height " + height)
-	console.log("width " + width)
+	console.log("width " + width)	
 	var playg = document.querySelector('.playground'),
 		floor = Math.floor(playg.clientWidth / cubeSize) * cubeSize
 	// ceil = Math.ceil(playg.clientWidth / 10) * 10
