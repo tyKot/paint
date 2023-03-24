@@ -67,6 +67,7 @@
 	document.body.append(`height ${document.documentElement.clientHeight} width ${document.documentElement.clientWidth}`)
 	function tool_download() {
 		html2canvas(document.getElementById("playground"), {
+			windowWidth: document.documentElement.clientWidth,
 			allowTaint: true,
 			useCORS: true,
 		}).then(function (canvas) {
