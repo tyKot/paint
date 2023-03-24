@@ -4,23 +4,29 @@ var color
 	X = 0
 	height = document.documentElement.clientHeight
 	width = document.documentElement.clientWidth 
+	mode = 'default'
 let limit = 6
 
 function tool_pen() {
-
+	mode = 'onclick'
+	// var pixel = document.querySelectorAll('.squareWidth')
+	// pixel.forEach(el => {
+	// 	el.toggleAttribute('onclick')
+	// 	el.toggleAttribute('onmouseover')
+	// });
 }
 function tool_fill() {
-
+	mode = 'fill'
 }
 function tool_dropper() {
-
+	mode = 'drop_color'
 }
 function tool_eraser() {
-
+	mode = 'erase'
 }
-function over(some) {
+function paint(some) {
 	some.style.background = color//getRandomColor()
-	//console.log(some.style.background=e)
+	
 
 }
 function out(some) {
@@ -51,7 +57,9 @@ function generate() {
 		console.log('Y:' + y)
 		var x3 = document.createElement('div')
 		x3.setAttribute('class', 'squareWidth')
-		x3.setAttribute('onmouseover', 'over(this)')
+		x3.setAttribute('onmouseover', 'paint(this)')
+		// x3.setAttribute('ontouchstart', 'paint(this)')
+		x3.setAttribute('ontouchmove', 'paint(this)')
 		playg.appendChild(x3)
 		console.log('height:'+playg.clientHeight)
 
@@ -67,7 +75,7 @@ function generate() {
 			}
 			var x3 = document.createElement('div')
 			x3.setAttribute('class', 'squareWidth')
-			x3.setAttribute('onmouseover', 'over(this)')
+			x3.setAttribute('onmouseover', 'paint(this)')
 			// x3.style.background='#fff'
 			playg.appendChild(x3)
 			// console.log('x:' + x)

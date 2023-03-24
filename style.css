@@ -70,8 +70,8 @@ hr {
 }
 
 .playground {
-	width: 1280px;
-	height: 720px;
+	width: 60%;
+	height: 50%;
 	/* height: calc(100vh - 54px); */
 	margin: auto;
 	overflow-y: hidden;
