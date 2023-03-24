@@ -2,24 +2,46 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	</link>
 	<script src="script.js"></script>
 </head>
 
 <body onload="generate()">
-	<div id="toolbar">
-		<div id="color">
-			<input id="colorpick">
+	<div class="toolbar" id="toolbar">
+		<div class="color" id="color">
+			<button class="userColor" id="userColor"></button>
+			<div class="pallete">
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)"></button>
+
+				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor"></button>
+				<button class="colorBox" id="palleteColor"></button>
+			</div>
+			<!-- <input id="colorpick">
 			</input>
 			<input id="enter" type="submit" value="Enter" onclick="kola()">
-			</input>
+			</input> -->
 		</div>
-		<div id="tools">
+		<div class="tools" id="tools">
 			<div class="tool pen" onclick="tool_pen()">
 				<img src="img/pen.png">
 			</div>
-			<div class="tool fill" onclick="tool_fill()">
+			<div class="tool fill" onclick="tool_fill(colorpick.value)">
 				<img src="img/fill.png">
 			</div>
 			<div class="tool dropper" onclick="tool_dropper()">
@@ -30,7 +52,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="playground">
+	<div class="playground" id="playground">
 
 	</div>
 </body>

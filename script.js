@@ -1,36 +1,35 @@
 console.log('git gud ;)')
-var color
-	cubeSize = 20//px
-	X = 0
-	height = document.documentElement.clientHeight
-	width = document.documentElement.clientWidth 
+var color = '#fff',
+	cubeSize = 20,//px
+	X = 0,
+	height = document.documentElement.clientHeight,
+	width = document.documentElement.clientWidth,
 	mode = 'default'
 let limit = 6
 
 function tool_pen() {
-	mode = 'onclick'
-	// var pixel = document.querySelectorAll('.squareWidth')
-	// pixel.forEach(el => {
-	// 	el.toggleAttribute('onclick')
-	// 	el.toggleAttribute('onmouseover')
-	// });
+	mode = 'click'
 }
-function tool_fill() {
+function tool_fill(color) {
 	mode = 'fill'
+	var pixel = document.querySelectorAll('.squareWidth')
+	pixel.forEach(el => {
+		el.style.background = color
+	});
 }
 function tool_dropper() {
 	mode = 'drop_color'
+
 }
 function tool_eraser() {
 	mode = 'erase'
 }
-function paint(some) {
-	some.style.background = color//getRandomColor()
-	
-
-}
-function out(some) {
-	some.style.background = '#000';
+function paint(pixel) {
+	if (!mode === 'drop_color') {
+		pixel.style.background = color//getRandomColor()
+		return
+	}
+	userColor.value = pixel.style.background
 }
 
 function getRandomColor() {
@@ -42,21 +41,21 @@ function getRandomColor() {
 	return color;
 }
 
-function kola() {
-	color = String(colorpick.value)
+function pickColor(btn) {
+	color = btn.style
 	console.log(color)
 }
 
 function generate() {
 	console.log("height " + height)
 	console.log("width " + width)
-	var playg = document.querySelector('.playground')
+	var playg = document.querySelector('.playground'),
 		floor = Math.floor(playg.clientWidth / cubeSize) * cubeSize
 	// ceil = Math.ceil(playg.clientWidth / 10) * 10
-	for (let y = 0; y <= playg.clientHeight-cubeSize; y+=cubeSize) {
+	for (let y = 0; y <= playg.clientHeight - cubeSize; y += cubeSize) {
 		console.log('Y:' + y)
 		createPixel(playg)
-		console.log('height:'+playg.clientHeight)
+		console.log('height:' + playg.clientHeight)
 
 		for (let x = 1; x < playg.clientWidth; x++) {
 
@@ -65,23 +64,25 @@ function generate() {
 			X += cubeSize
 			if (X == floor) {
 				console.log('nice')
-				X=0
+				X = 0
 				break
 			}
 			createPixel(playg)
 			// console.log('x:' + x)
-			
+
 		}
 	}
 
 }
 
-function createPixel(playg){
+function createPixel(playg) {
 	var x3 = document.createElement('div')
 	x3.setAttribute('class', 'squareWidth')
-	x3.setAttribute('onmouseover', 'paint(this)')
+	x3.setAttribute('onclick', 'paint(this)')
+	// x3.setAttribute('onmouseover', 'paint(this)')
 	x3.setAttribute('ontouchstart', 'paint(this)')
 	x3.setAttribute('ontouchmove', 'paint(this)')
+	x3.style.background = '#fff'
 	playg.appendChild(x3)
 }
 
