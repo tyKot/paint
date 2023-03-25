@@ -207,7 +207,7 @@ img {
 
 
 .playground {
-	width: 70%;
+	width: 100%;
 	margin-left: 4px;
 	height: calc(100vh - 93px);
 	overflow-y: hidden;
