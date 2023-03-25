@@ -39,16 +39,17 @@ function tool_erase_all() {
 	});
 	console.log(`erase all mode:${mode}`)
 }
-function paint(pixel) {
+function paint(event,pixel) {
+	event.preventDefault()
 	if (!(mode == 'drop_color')) {
 		pixel.style.background = color//getRandomColor()
 		return
 	}
-
 	userColor.style.background = color
 	mode = 'default'
 	// console.log(mode)
 	userColor.value = pixel.style.background
+	return false
 }
 
 function pickColor(btn) {
@@ -89,10 +90,10 @@ function generate() {
 function createPixel(playg) {
 	var x3 = document.createElement('div')
 	x3.setAttribute('class', 'squareWidth')
-	x3.setAttribute('onclick', 'paint(this)')
-	x3.setAttribute('onmouseover', 'paint(this)')
-	x3.setAttribute('ontouchstart', 'paint(this)')
-	x3.setAttribute('ontouchmove', 'paint(this)')
+	x3.setAttribute('onclick', 'paint(event,this)')
+	x3.setAttribute('onmouseover', 'paint(event,this)')
+	// x3.setAttribute('ontouchstart', 'paint(event,this)')
+	x3.setAttribute('ontouchmove', 'paint(event,this)')
 	x3.style.background = '#fff'
 	playg.appendChild(x3)
 }
