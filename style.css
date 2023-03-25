@@ -36,11 +36,9 @@ img {
 	width: 20px;
 	height: 20px;
 	margin: auto;
-	background: #000;
+	background: #fff;
 	display: inline-block;
-	-webkit-transition: .15s;
-	-o-transition: .15s;
-	transition: .15s;
+	touch-action: none;
 }
 
 .pallete {
@@ -209,10 +207,8 @@ img {
 
 
 .playground {
-	width: 80%;
-	/* height: 50%; */
+	width: 50%;
 	margin-left: 4px;
 	height: calc(100vh - 93px);
 	overflow-y: hidden;
-	/* border: 2px solid red; */
 }

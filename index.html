@@ -14,24 +14,26 @@
 		<div class="color" id="color">
 			<button class="userColor" id="userColor"></button>
 			<div class="pallete">
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #000000;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #7f7f7f;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #880015;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ed1c24;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ff7f27;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #fff200;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #22b14c;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #00a2e8;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" >?</button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #000000;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #7f7f7f;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #880015;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #ed1c24;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #ff7f27;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #fff200;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #22b14c;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #00a2e8;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,true,false)" >?</button>
 
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ffffff;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #c3c3c3;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #b97a57;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ffaec9;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #ffc90e;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #efe4b0;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #b5e61d;"></button>
-				<button class="colorBox" id="palleteColor" onclick = "pickColor(this)" style="background: #99d9ea;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #ffffff;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #c3c3c3;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #b97a57;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #ffaec9;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #ffc90e;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #efe4b0;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #b5e61d;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,false)" style="background: #99d9ea;"></button>
+				<button class="colorBox" id="palleteColor" onclick = "pickColor(this,false,true)" >??</button>
+
 			</div>
 		</div>
 		<div class="tools" id="tools">
@@ -54,7 +56,7 @@
 				<img src="img/download.svg">
 			</div>
 			<div class="tool" id="toolDownload" style="display: none;">
-				<a id="hrefDownload" href="" target="_blank" rel="noopener noreferrer" download="мой_шедевр">Скачать</a>
+				<a id="hrefDownload" href="" target="_blank" rel="noopener noreferrer" download="шедевр">Скачать</a>
 			</div>
 		</div>
 	</div>

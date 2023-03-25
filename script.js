@@ -5,7 +5,10 @@ var color = '#fff',
 	height = document.documentElement.clientHeight,
 	width = document.documentElement.clientWidth,
 	mode = 'default'
-let limit = 6
+let limit = 6,
+	random = false,
+	draw
+var random1 = false
 
 
 
@@ -14,7 +17,14 @@ function tool_pen() {
 }
 function tool_fill(color) {
 	mode = 'fill'
-	
+	if (random1) {
+		var pixel = document.querySelectorAll('.squareWidth')
+		pixel.forEach(el => {
+			el.style.background = getRandomColor()
+		});
+		mode = 'default'
+		return
+	}
 	var pixel = document.querySelectorAll('.squareWidth')
 	pixel.forEach(el => {
 		el.style.background = color
@@ -39,20 +49,23 @@ function tool_erase_all() {
 	});
 	console.log(`erase all mode:${mode}`)
 }
-function paint(event,pixel) {
-	event.preventDefault()
-	if (!(mode == 'drop_color')) {
-		pixel.style.background = color//getRandomColor()
+
+
+function pickColor(btn, random, random2) {
+	if (random2) {
+		userColor.style.background='#fff'
+		userColor.innerText='magic'
+		random1 = true
+		return
+	} else {
+		userColor.innerText=''
+		random1 = false
+	}
+	if (random) {
+		color = getRandomColor()
+		userColor.style.background = color
 		return
 	}
-	userColor.style.background = color
-	mode = 'default'
-	// console.log(mode)
-	userColor.value = pixel.style.background
-	return false
-}
-
-function pickColor(btn) {
 	color = btn.style.background
 	userColor.style.background = color
 	console.log(color)
@@ -60,7 +73,7 @@ function pickColor(btn) {
 
 function generate() {
 	console.log("height " + height)
-	console.log("width " + width)	
+	console.log("width " + width)
 	var playg = document.querySelector('.playground'),
 		floor = Math.floor(playg.clientWidth / cubeSize) * cubeSize
 	// ceil = Math.ceil(playg.clientWidth / 10) * 10
@@ -89,12 +102,31 @@ function generate() {
 
 function createPixel(playg) {
 	var x3 = document.createElement('div')
-	x3.setAttribute('class', 'squareWidth')
-	x3.setAttribute('onclick', 'paint(event,this)')
-	x3.setAttribute('onmouseover', 'paint(event,this)')
-	// x3.setAttribute('ontouchstart', 'paint(event,this)')
-	x3.setAttribute('ontouchmove', 'paint(event,this)')
-	x3.style.background = '#fff'
+	x3.classList.add('squareWidth')
+	x3.addEventListener('mouseover', function () {
+		if (!draw) return
+		if (random1) {
+			x3.style.backgroundColor = getRandomColor()
+			return
+		}
+		if(mode=='erase'){
+			x3.style.backgroundColor = '#fff'
+			return
+		}
+		x3.style.backgroundColor = color
+	})
+	x3.addEventListener('mousedown', function () {
+		if (random1) {
+			x3.style.backgroundColor = getRandomColor()
+			return
+		}
+		if(mode=='erase'){
+			x3.style.backgroundColor = '#fff'
+			return
+		}
+		x3.style.backgroundColor = color
+	})
+
 	playg.appendChild(x3)
 }
 function getRandomColor() {
@@ -107,19 +139,10 @@ function getRandomColor() {
 }
 
 
+window.addEventListener("mousedown", function () {
+	draw = true
+})
 
-
-
-
-/*for (let i = 1; i < ((height / 2) + (width / 2)) * 3.13; i++) {
-		document.body.append(
-			Object.assign(document.createElement('div'),
-				{
-					id: 'sq' + i,
-					className: 'squareWidth'
-				}
-			)
-		)
-		//x3.setAttribute('onmouseout','out(this)')
-		//console.log('x'+i)
-	}*/ 
+window.addEventListener("mouseup", function () {
+	draw = false
+})
